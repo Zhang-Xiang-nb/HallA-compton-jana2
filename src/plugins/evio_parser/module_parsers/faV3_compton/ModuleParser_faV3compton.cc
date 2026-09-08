@@ -211,6 +211,9 @@ void ModuleParser_faV3compton::parse(std::shared_ptr<evio::BaseStructure> data_b
                d = data_words[j];
 	       nwords++;
 
+           hit.acc_sum_nsample = static_cast<uint64_t>(hit.acc_sum_nsample1)
+               | (static_cast<uint64_t>(hit.acc_sum_nsample2) << 26);
+
 	       // Accumulators  word 9
 	       hit.acc_sum1 = getBitsInRange(d, 29, 0);
 
@@ -228,6 +231,9 @@ void ModuleParser_faV3compton::parse(std::shared_ptr<evio::BaseStructure> data_b
                j++;
                d = data_words[j];
 	       nwords++;
+
+           hit.acc_sum = static_cast<uint64_t>(hit.acc_sum1)
+               | (static_cast<uint64_t>(hit.acc_sum2) << 30);
 
 	       // Accumulators  word 11
 	       hit.acc_np_nsboverlapped = getBitsInRange(d, 27, 14);

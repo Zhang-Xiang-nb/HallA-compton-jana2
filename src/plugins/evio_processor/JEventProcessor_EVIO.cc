@@ -127,6 +127,8 @@ void JEventProcessor_EVIO::Init() {
     compton_tree->Branch("acc_sum_nsample2", &acc_sum_nsample2);
     compton_tree->Branch("acc_sum1", &acc_sum1);
     compton_tree->Branch("acc_sum2", &acc_sum2);
+    compton_tree->Branch("acc_sum", &acc_sum);
+    compton_tree->Branch("acc_sum_nsample", &acc_sum_nsample);
     compton_tree->Branch("acc_np_nsboverlapped", &acc_np_nsboverlapped);
     compton_tree->Branch("acc_np_nonsa", &acc_np_nonsa);
     compton_tree->Branch("acc_np_miss", &acc_np_miss);
@@ -296,6 +298,8 @@ void JEventProcessor_EVIO::ProcessSequential(const JEvent &event) {
     acc_sum_nsample2.clear();
     acc_sum1.clear();
     acc_sum2.clear();
+    acc_sum.clear();
+    acc_sum_nsample.clear();
     acc_np_nsboverlapped.clear();
     acc_np_nonsa.clear();
     acc_np_miss.clear();
@@ -312,6 +316,8 @@ void JEventProcessor_EVIO::ProcessSequential(const JEvent &event) {
 	acc_sum_nsample2.push_back(compton_accum->acc_sum_nsample2);
 	acc_sum1.push_back(compton_accum->acc_sum1);
 	acc_sum2.push_back(compton_accum->acc_sum2);
+    acc_sum.push_back(compton_accum->acc_sum);
+    acc_sum_nsample.push_back(compton_accum->acc_sum_nsample);
 	acc_np_nsboverlapped.push_back(compton_accum->acc_np_nsboverlapped);
 	acc_np_nonsa.push_back(compton_accum->acc_np_nonsa);
 	acc_np_miss.push_back(compton_accum->acc_np_miss);

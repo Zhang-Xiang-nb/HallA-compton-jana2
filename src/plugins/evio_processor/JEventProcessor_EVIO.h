@@ -173,6 +173,8 @@ private:
     std::vector<uint32_t> acc_sum_nsample2;
     std::vector<uint32_t> acc_sum1;
     std::vector<uint32_t> acc_sum2;
+    std::vector<uint64_t> acc_sum;
+    std::vector<uint64_t> acc_sum_nsample;
     std::vector<uint32_t> acc_np_nsboverlapped;
     std::vector<uint32_t> acc_np_nonsa;
     std::vector<uint32_t> acc_np_miss;
